@@ -9,13 +9,9 @@
  * For the list of contributors see $ROOTSYS/README/CREDITS.             *
  *************************************************************************/
 
-//////////////////////////////////////////////////////////////////////////
-//                                                                      //
-// TBuffer                                                              //
-//                                                                      //
-// Buffer base class used for serializing objects.                      //
-//                                                                      //
-//////////////////////////////////////////////////////////////////////////
+/** \class TBuffer
+Buffer base class used for serializing objects.
+*/
 
 #include "TBuffer.h"
 #include "TClass.h"
@@ -84,6 +80,7 @@ TBuffer::TBuffer(EMode mode, Int_t bufsiz)
 /// TBuffer::kInitialSize (1024) bytes. An external buffer can be passed
 /// to TBuffer via the buf argument. By default this buffer will be adopted
 /// unless adopt is false.
+///
 /// If the new buffer is _not_ adopted and no memory allocation routine
 /// is provided, a Fatal error will be issued if the Buffer attempts to
 /// expand.
@@ -250,7 +247,7 @@ ReAllocCharFun_t TBuffer::GetReAllocFunc() const
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Set which memory reallocation method to use.  If reallocafunc is null,
-/// reset it to the defaul value (TStorage::ReAlloc)
+/// reset it to the default value (TStorage::ReAlloc)
 
 void  TBuffer::SetReAllocFunc(ReAllocCharFun_t reallocfunc )
 {
@@ -308,7 +305,7 @@ TClass *TBuffer::GetClass(const char *className)
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-/// Return the current PRocessID.
+/// Return the current Process-ID.
 
 TProcessID *TBuffer::ReadProcessID(UShort_t pidf)
 {
